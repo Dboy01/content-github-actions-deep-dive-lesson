@@ -18,7 +18,7 @@ jobs:
       - name: Install libraries
         run: |
             cd function
-            python3 -m pip install --upgrade pip
+            sudo yum –y install python3-pip
             if [ -f requirements.txt ]; then pip install -r requirements.txt -t .; fi
       - name: Create zip bundle
         run: |
