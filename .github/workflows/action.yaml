@@ -9,18 +9,13 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-    strategy:
-      matrix:
-        python-version: ['2.x', '3.x']
-    name: Python ${{ matrix.python-version }} sample
     steps:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
-          architecture: x64
+          python-version: 3.1.1
       - name: Install libraries
         run: |
             cd function
